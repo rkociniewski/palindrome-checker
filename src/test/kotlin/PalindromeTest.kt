@@ -24,6 +24,11 @@ class PalindromeTest {
         Arguments.of("Flee to me, remote elf!"),
         Arguments.of("Sex at noon taxes"),
         Arguments.of("A Santa pets rats, as Pat taps a star step at NASA"),
+        Arguments.of(""),
+        Arguments.of("A"),
+        Arguments.of("12321"),
+        Arguments.of("123 321"),
+        Arguments.of("A man, a plan, a canal: Panama!")
     )
 
     private fun notPalindromeProvider() = listOf(
@@ -31,8 +36,10 @@ class PalindromeTest {
         Arguments.of("Flee to e, remote elf!"),
         Arguments.of("Sex at oon taxes"),
         Arguments.of("A Santa ets rats, as Pat taps a star step at NASA"),
+        Arguments.of("Hello"),
+        Arguments.of("Kotlin"),
+        Arguments.of("Palindrome"),
+        Arguments.of("12345"),
+        Arguments.of("Was it a car or a cat I saw? No!")
     )
 }
-
-
-

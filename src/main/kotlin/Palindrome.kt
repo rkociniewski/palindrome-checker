@@ -1,1 +1,4 @@
-fun String.isPalindrome() = replace("[\\W+]".toRegex(), "").let { it.equals(it.reversed(), true) }
+fun String.isPalindrome(): Boolean {
+    val sanitized = lowercase().filter { it.isLetterOrDigit() }
+    return sanitized == sanitized.reversed()
+}
