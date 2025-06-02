@@ -30,7 +30,7 @@ A palindrome is a word, phrase, number, or sequence of characters that reads the
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/palindrome-checker.git
+git clone https://github.com/rkociniewski/palindrome-checker.git
 cd palindrome-checker
 ````
 
@@ -69,6 +69,18 @@ This function:
 2. Removes all characters except letters and digits.
 3. Compares the sanitized string with its reversed version.
 
-## 🧾 License
+## License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT License.
+
+## Built With
+
+* [Gradle](https://gradle.org/) - Dependency Management
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning.
+
+## Authors
+
+* **Rafał Kociniewski** - [PowerMilk](https://github.com/rkociniewski)
