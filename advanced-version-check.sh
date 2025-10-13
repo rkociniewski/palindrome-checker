@@ -13,8 +13,8 @@ NC='\033[0m'
 
 # Configuration
 BUILD_FILE=""
-if [ -f "app/build.gradle.kts" ]; then
-    BUILD_FILE="app/build.gradle.kts"
+if [ -f "build.gradle.kts" ]; then
+    BUILD_FILE="build.gradle.kts"
 else
     echo -e "${RED}❌ No build.gradle file found${NC}"
     exit 1
@@ -125,7 +125,7 @@ echo ""
 
 # Validate semantic versioning
 if ! validate_semver "CURRENT_VERSION"; then
-    echo -e "${YELLOW}⚠️  Warning: versionName 'CURRENT_VERSION' is not valid semantic versioning${NC}"
+    echo -e "${YELLOW}⚠️  Warning: version 'CURRENT_VERSION' is not valid semantic versioning${NC}"
     echo "   Expected format: MAJOR.MINOR.PATCH (e.g., 1.2.3)"
     echo "   Optional: -prerelease+buildmetadata (e.g., 1.2.3-beta.1+20241010)"
     echo ""
@@ -165,9 +165,9 @@ if [[ $BRANCH_NAME =~ ^(main|release/) ]]; then
                 echo -e "${GREEN}✅ versionCode incremented by $CODE_DIFF${NC}"
             fi
 
-            # Check versionName
+            # Check version
             if [ "$CURRENT_NAME" == "$REMOTE_NAME" ]; then
-                echo -e "${RED}❌ ERROR: versionName was not changed!${NC}"
+                echo -e "${RED}❌ ERROR: version was not changed!${NC}"
                 echo "   Version: $CURRENT_NAME"
                 echo ""
 
@@ -188,7 +188,7 @@ if [[ $BRANCH_NAME =~ ^(main|release/) ]]; then
                 elif [ "$BUMP_TYPE" == "same" ]; then
                     echo -e "${YELLOW}⚠️  Warning: Version appears the same${NC}"
                 else
-                    echo -e "${GREEN}✅ versionName bumped ($BUMP_TYPE)${NC}"
+                    echo -e "${GREEN}✅ version bumped ($BUMP_TYPE)${NC}"
                     echo "   $REMOTE_NAME → $CURRENT_NAME"
                 fi
             fi

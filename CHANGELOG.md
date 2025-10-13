@@ -9,6 +9,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### ADDED
 
+- Created Contributing doc
+
+## 1.0.5 - 2025-10-13
+
+### ADDED
+
 - Created CodeQL scripts
 
 ## 1.0.4 - 2025-10-13

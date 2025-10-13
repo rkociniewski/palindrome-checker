@@ -19,7 +19,6 @@ jobs:
     with:
       run_tests: true
       build_release: true
-      upload_artifacts: true
 
   verify-version:
     runs-on: ubuntu-latest
@@ -34,7 +33,7 @@ jobs:
 
           # Try Kotlin DSL first
           if [ -f "build.gradle.kts" ]; then
-            ACTUAL_VERSION=$(grep -E 'versionName\s*=\s*"[^"]*"' app/build.gradle.kts | sed -E 's/.*versionName\s*=\s*"([^"]*)".*/\1/' | head -1)
+            ACTUAL_VERSION=$(grep -E 'version\s*=\s*"[^"]*"' build.gradle.kts | sed -E 's/.*version\s*=\s*"([^"]*)".*/\1/' | head -1)
           fi
 
           echo "Branch version: $EXPECTED_VERSION"

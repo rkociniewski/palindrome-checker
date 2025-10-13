@@ -95,11 +95,10 @@ After committing to `main`/`release/*`, reminds about version updates:
 ```
 ⚠️  You committed to main
 ❌ WARNING: Build file was NOT modified
-   Did you remember to bump versionCode and versionName?
+   Did you remember to bump version?
 
    Current version info:
-   versionCode = 42
-   versionName = "1.2.3"
+   version = "1.2.3"
 ```
 
 ### 5. `pre-push` - Version Bump Enforcement
@@ -119,7 +118,7 @@ Local version:  1.2.4 (43)
    Remote: 42
    Local:  42
 
-Please bump versionCode in app/build.gradle.kts
+Please bump versionCode in build.gradle.kts
 ```
 
 ## 🛠️ Configuration

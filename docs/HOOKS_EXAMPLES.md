@@ -227,9 +227,8 @@ git checkout -b hotfix/1.2.4
 # ... edit code ...
 
 # 3. Bump version (patch only!)
-# app/build.gradle.kts:
-# versionCode = 10204  (was 10203)
-# versionName = "1.2.4" (was "1.2.3")
+# build.gradle.kts:
+# version = "1.2.4" (was "1.2.3")
 
 # 4. Commit
 git add .
@@ -238,8 +237,7 @@ git commit -m "fix: Resolve critical payment bug"
 # 5. Push - hook will verify version
 git push origin hotfix/1.2.4
 # ✅ Version check passed
-# versionCode incremented by 1
-# versionName bumped (patch)
+# version bumped (patch)
 # 1.2.3 → 1.2.4
 
 # 6. Create PR to main
@@ -255,9 +253,8 @@ git pull
 git checkout -b release/2.0.0
 
 # 2. Bump version (minor bump)
-# app/build.gradle.kts:
-# versionCode = 20000  (was 10999)
-# versionName = "2.0.0" (was "1.9.5")
+# build.gradle.kts:
+# version = "2.0.0" (was "1.9.5")
 
 # 3. Commit
 git add .
@@ -308,7 +305,7 @@ git merge feature/user-notifications
 
 # 2. Bump version (optional, depends on strategy)
 # Strategy A: Version 1.x.x-dev
-# versionName = "1.10.0-dev"
+# version = "1.10.0-dev"
 
 # Strategy B: Don't change until release
 # Keep as is, change only in release branch
@@ -348,7 +345,7 @@ git push origin main
 # Solution:
 # 1. Bump version locally
 # 2. Amend last commit
-git add app/build.gradle.kts
+git add build.gradle.kts
 git commit --amend --no-edit
 
 # 3. Force push (carefully!)
@@ -376,7 +373,7 @@ git commit --amend -m "feat: Add new feature"
 # Hook warns:
 git commit -m "feat: Add logging"
 # ⚠️  Warning: Debug statements found
-# app/src/main/kotlin/Utils.kt:42: System.out.println("Debug")
+# src/main/kotlin/Utils.kt:42: System.out.println("Debug")
 
 # Solution 1: Remove debug statements
 # Remove println, console.log, etc.
@@ -527,10 +524,10 @@ versionCode = 241010  // October 10, 2024
 ### Pre-release Versions
 
 ```kotlin
-versionName = "1.2.3-alpha.1"   // Alpha
-versionName = "1.2.3-beta.2"    // Beta
-versionName = "1.2.3-rc.1"      // Release Candidate
-versionName = "1.2.3"           // Production
+version = "1.2.3-alpha.1"   // Alpha
+version = "1.2.3-beta.2"    // Beta
+version = "1.2.3-rc.1"      // Release Candidate
+version = "1.2.3"           // Production
 ```
 
 ---
