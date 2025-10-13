@@ -140,7 +140,6 @@ version = "2.0.0-alpha.1"   // Alpha testing
 version = "2.0.0-beta.2"    // Beta testing
 version = "2.0.0-rc.1"      // Release candidate
 version = "2.0.0"           // Production release
-
 ```
 
 ---
