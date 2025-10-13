@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  android-build:
+  build:
     uses: ./.github/workflows/build.yml
     with:
       run_tests: true
@@ -22,7 +22,7 @@ jobs:
       upload_artifacts: true
 
   tag-release:
-    needs: android-build
+    needs: build
     runs-on: ubuntu-latest
     permissions:
       contents: write

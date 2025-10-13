@@ -14,8 +14,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  android-build:
-    uses: ./.github/workflows/android-build.yml
+  build:
+    uses: ./.github/workflows/build.yml
     with:
       run_tests: true
       build_release: true
@@ -33,11 +33,8 @@ jobs:
           EXPECTED_VERSION="${BRANCH_NAME#release/}"
 
           # Try Kotlin DSL first
-          if [ -f "app/build.gradle.kts" ]; then
+          if [ -f "build.gradle.kts" ]; then
             ACTUAL_VERSION=$(grep -E 'versionName\s*=\s*"[^"]*"' app/build.gradle.kts | sed -E 's/.*versionName\s*=\s*"([^"]*)".*/\1/' | head -1)
-          else
-            # Fallback to Groovy DSL
-            ACTUAL_VERSION=$(grep -E 'versionName\s*=?\s*["\047][^"\047]*["\047]' app/build.gradle | sed -E 's/.*versionName\s*=?\s*["\047]([^"\047]*)["\047].*/\1/' | head -1)
           fi
 
           echo "Branch version: $EXPECTED_VERSION"

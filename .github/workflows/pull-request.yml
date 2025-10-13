@@ -23,8 +23,8 @@ permissions:
   checks: write
 
 jobs:
-  android-build:
-    uses: ./.github/workflows/android-build.yml
+  build:
+    uses: ./.github/workflows/build.yml
     with:
       run_tests: true
       build_release: false
@@ -77,7 +77,7 @@ jobs:
           fi
 
   pr-comments:
-    needs: android-build
+    needs: build
     runs-on: ubuntu-latest
     if: github.event.action == 'opened'
 
