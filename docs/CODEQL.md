@@ -86,7 +86,7 @@ When CodeQL finds issues in a PR:
 ```
 Alert: Insecure Android WebView
 Severity: High
-File: app/src/main/kotlin/WebViewActivity.kt
+File: src/main/kotlin/WebViewActivity.kt
 Line: 45
 
 Description:

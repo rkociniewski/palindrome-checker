@@ -27,8 +27,8 @@ paths-ignore:
 
 # Paths to include
 paths:
-  - 'app/src/main/kotlin/**'
-  - 'app/src/main/java/**'
+  - 'src/main/kotlin/**'
+  - 'src/main/java/**'
 
 # Query filters - exclude low-priority queries
 query-filters:

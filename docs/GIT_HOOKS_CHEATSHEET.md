@@ -85,7 +85,7 @@ mv .git/hooks/pre-commit.disabled .git/hooks/pre-commit
 | `hotfix/*` | PATCH | 1.2.3 → 1.2.4 |
 | `release/*` | MINOR | 1.2.3 → 1.3.0 |
 | `feature/*` | (in release) | - |
-| `main` | Bump both! | versionCode + versionName |
+| `main` | Bump both! | version |
 
 ### versionCode Strategies
 
@@ -111,8 +111,8 @@ versionCode = 241010  // YYMMDD
 git checkout main
 git checkout -b hotfix/1.2.4
 
-# Change: versionCode = 10204, versionName = "1.2.4"
-git add app/build.gradle.kts
+# Change: version = "1.2.4"
+git add build.gradle.kts
 git commit -m "fix: Critical payment bug"
 git push origin hotfix/1.2.4
 
@@ -125,8 +125,8 @@ git push origin hotfix/1.2.4
 git checkout develop
 git checkout -b release/2.0.0
 
-# Change: versionCode = 20000, versionName = "2.0.0"
-git add app/build.gradle.kts
+# Change: version = "2.0.0"
+git add build.gradle.kts
 git commit -m "build: Bump version to 2.0.0"
 git push origin release/2.0.0
 
@@ -203,7 +203,7 @@ git push origin main
 versionCode = 43
 
 # 2. Amend commit
-git add app/build.gradle.kts
+git add build.gradle.kts
 git commit --amend --no-edit
 
 # 3. Force push (carefully!)

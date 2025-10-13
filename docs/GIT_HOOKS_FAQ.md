@@ -131,71 +131,16 @@ git commit -m "feat: Add login screen"
 - **Feature branches**: Never! Version is bumped in release branch
 - **Main branch**: Always ensure version is bumped before merge
 
-### Q: What's the difference between versionCode and versionName?
-
-**A:**
-
-```kotlin
-// versionCode: Integer, must always increase
-versionCode = 42  // 41 → 42 → 43 → 44...
-
-// versionName: String, semantic version
-versionName = "1.2.3"  // Human-readable: MAJOR.MINOR.PATCH
-```
-
-### Q: How do I calculate versionCode from versionName?
-
-**A:** Common strategies:
-
-```kotlin
-// Strategy 1: Semantic (Recommended)
-// versionCode = MAJOR * 10000 + MINOR * 100 + PATCH
-versionCode = 10203  // for version 1.2.3
-versionCode = 20000  // for version 2.0.0
-
-// Strategy 2: Simple incremental
-versionCode = 1, 2, 3, 4, 5...
-
-// Strategy 3: Timestamp
-versionCode = 241010  // YYMMDD format
-```
-
-### Q: Hook says "versionCode was not incremented" but I did increase it!
-
-**A:** Check:
-
-1. Did you commit the change to `build.gradle.kts`?
-   ```bash
-   git status  # Is build.gradle.kts committed?
-   ```
-
-2. Are you comparing with the correct remote branch?
-   ```bash
-   git fetch origin
-   git show origin/main:app/build.gradle.kts | grep versionCode
-   ```
-
-3. Did you amend the commit?
-   ```bash
-   git add app/build.gradle.kts
-   git commit --amend --no-edit
-   ```
-
 ### Q: Can I use pre-release versions?
 
 **A:** Yes! Use semantic versioning extensions:
 
 ```kotlin
-versionName = "2.0.0-alpha.1"   // Alpha testing
-versionName = "2.0.0-beta.2"    // Beta testing
-versionName = "2.0.0-rc.1"      // Release candidate
-versionName = "2.0.0"           // Production release
+version = "2.0.0-alpha.1"   // Alpha testing
+version = "2.0.0-beta.2"    // Beta testing
+version = "2.0.0-rc.1"      // Release candidate
+version = "2.0.0"           // Production release
 
-// versionCode should still increment:
-versionCode = 20000  // alpha
-versionCode = 20001  // beta
-versionCode = 20002  // rc
-versionCode = 20003  // production
 ```
 
 ---

@@ -172,17 +172,14 @@ test_pre_push() {
     # Test: Version extraction
     echo -e "${YELLOW}Test: Version extraction${NC}"
 
-    if [ -f "app/build.gradle.kts" ]; then
-        BUILD_FILE="app/build.gradle.kts"
-    else
-        BUILD_FILE="app/build.gradle"
+    if [ -f "build.gradle.kts" ]; then
+        BUILD_FILE="build.gradle.kts"
     fi
 
-    VERSION_CODE=$(grep -E 'versionCode\s*=\s*[0-9]+' "$BUILD_FILE" | grep -oE '[0-9]+' | head -1)
-    VERSION_NAME=$(grep -E 'versionName\s*=\s*["\047][^"\047]+["\047]' "$BUILD_FILE" | grep -oE '["\047][^"\047]+["\047]' | tr -d '"' | tr -d "'" | head -1)
+    VERSION_NAME=$(grep -E 'version\s*=\s*["\047][^"\047]+["\047]' "$BUILD_FILE" | grep -oE '["\047][^"\047]+["\047]' | tr -d '"' | tr -d "'" | head -1)
 
-    if [ -n "$VERSION_CODE" ] && [ -n "$VERSION_NAME" ]; then
-        echo -e "${GREEN}PASS${NC}: Extracted versionCode=$VERSION_CODE, versionName=$VERSION_NAME"
+    if [ -n "$VERSION_NAME" ]; then
+        echo -e "${GREEN}PASS${NC}: version=$VERSION_NAME"
         ((passed++))
     else
         echo -e "${RED}FAIL${NC}: Could not extract version info"

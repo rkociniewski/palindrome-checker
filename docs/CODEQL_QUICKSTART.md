@@ -422,7 +422,7 @@ paths-ignore:
     - '**/assets/**'
 
 paths:
-    - 'app/src/main/kotlin/**'  # Tylko główny kod
+    - 'src/main/kotlin/**'  # Tylko główny kod
 ```
 
 **Option 4: Use lite workflow**
