@@ -1,7 +1,4 @@
-# 📚 Gospel A Caso Documentation
-
-Welcome to the Gospel A Caso project documentation!
-This directory contains comprehensive guides for developers, contributors, and maintainers.
+# 📚 Palindrome Checker
 
 ## 📖 Table of Contents
 
@@ -85,7 +82,7 @@ Scripts are located in the `../scripts/` directory:
 
 ### Configuration
 
-- [Dependabot Config](../.github/dependabot.yml)
+- [Dependabot Config](../.github/dependabot/dependabot.yml)
 - [CodeQL Config](../.github/codeql/codeql-config.yml)
 - [Git Hooks Config](../.githooks/config)
 
