@@ -10,9 +10,10 @@ group = "rk.powermilk"
 /**
  * project version
  */
-version = "1.0.1"
+version = "1.0.2"
 
 val javaVersion = JavaVersion.VERSION_21
+val jvmTargetVersion = JvmTarget.JVM_21.target
 
 plugins {
     alias(libs.plugins.kotlin.jvm)
@@ -110,7 +111,7 @@ tasks.register("coverage") {
 kotlin {
     compilerOptions {
         verbose = true // enable verbose logging output
-        jvmTarget.set(JvmTarget.fromTarget(java.targetCompatibility.toString())) // target version of the generated JVM bytecode
+        jvmTarget.set(JvmTarget.fromTarget(jvmTargetVersion)) // target version of the generated JVM bytecode
     }
 }
 
@@ -121,9 +122,9 @@ detekt {
 }
 
 tasks.withType<Detekt>().configureEach {
-    jvmTarget = JvmTarget.JVM_21.target
+    jvmTarget = jvmTargetVersion
 }
 
 tasks.withType<DetektCreateBaselineTask>().configureEach {
-    jvmTarget = JvmTarget.JVM_21.target
+    jvmTarget = jvmTargetVersion
 }

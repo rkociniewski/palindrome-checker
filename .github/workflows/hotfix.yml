@@ -4,9 +4,17 @@ on:
   push:
     branches:
       - 'hotfix/**'
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - '.gitignore'
+
+concurrency:
+  group: hotfix-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  build:
+  android-build:
     uses: ./.github/workflows/build.yml
     with:
       run_tests: true
