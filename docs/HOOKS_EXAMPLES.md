@@ -6,7 +6,7 @@
 2. [Commit Message Examples](#commit-message-examples)
 3. [Versioning Workflow](#versioning-workflow)
 4. [Scenarios and Solutions](#scenarios-and-solutions)
-5. [Android Studio Integration](#android-studio-integration)
+5. [Intellij Idea Integration](#intellij-idea-integration)
 
 ---
 
@@ -412,7 +412,7 @@ echo 'API_KEY="your-key-here"' >> local.properties
 echo 'local.properties' >> .gitignore
 
 # 4. Use in build.gradle.kts
-android {
+application {
     defaultConfig {
         val properties = Properties()
         properties.load(FileInputStream(rootProject.file("local.properties")))
@@ -426,7 +426,7 @@ git commit -m "feat: Add API integration with secure key storage"
 
 ---
 
-## Android Studio Integration
+## Intellij Idea Integration
 
 ### Commit Message Template
 
@@ -444,7 +444,7 @@ Shortcuts:
 - `Ctrl+K` - Commit
 - `Ctrl+Shift+K` - Commit and Push
 
-### Pre-commit in Android Studio
+### Pre-commit in Intellij Idea
 
 1. **Settings → Version Control → Commit**
 2. Check boxes:
@@ -474,7 +474,7 @@ Shortcuts:
     $END$
 ```
 
-### Run Hooks in Android Studio
+### Run Hooks in Intellij Idea
 
 Add External Tools:
 
@@ -611,7 +611,7 @@ chmod +x .git/hooks/*
 ### Hook conflicts with IDE
 
 ```bash
-# Android Studio may run its own pre-commit
+# Intellij Idea may run its own pre-commit
 # Settings → Version Control → Commit
 # Uncheck unnecessary options
 ```

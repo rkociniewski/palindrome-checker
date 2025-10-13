@@ -237,9 +237,6 @@ export API_KEY="your_key"
 
 # 3. CI/CD Secrets (GitHub/GitLab)
 # Settings → Secrets → Actions
-
-# 4. Android Keystore (for signing)
-# Store keystore separately, reference in build
 ```
 
 ### Q: How do I use secrets from local.properties?
@@ -248,7 +245,7 @@ export API_KEY="your_key"
 
 ```kotlin
 // build.gradle.kts
-android {
+application {
     defaultConfig {
         // Load properties
         val properties = Properties()
