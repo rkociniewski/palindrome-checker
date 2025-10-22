@@ -1,4 +1,4 @@
-rootProject.name = "palindrome"
+rootProject.name = "palindrome-checker"
 
 pluginManagement {
     repositories {
